@@ -1,0 +1,139 @@
+<!--
+  Generated template for the RegistrationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="custom">
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content overflow-scroll="false">
+  <ion-grid align-items-center>
+    <ion-row>
+      <ion-col col-4></ion-col>
+      <ion-col col-4 class="profile" >
+        <img src="../../assets/imgs/profile.png" >
+      </ion-col>
+      <ion-col col-4></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="textcenter">Rajeev Deshpande</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="textcenter">Sr. Platform Administrator</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button full [outline] = "apjSelected" color="custom" (click)='fillDropdown("APJ")'>APJ</button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button full color="custom" [outline]="emeaSelected" (click)='fillDropdown("EMEA")'>EMEA</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button full color="custom" [outline]="laSelected" (click)='fillDropdown("LA")'>Latin America</button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button full color="custom" [outline]="naSelected" (click)='fillDropdown("NA")'>North America</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div id="countryDiv" #countryDiv [hidden]="!disableDIV">
+    <ion-list>
+      <ion-item>
+        <ion-label color="custom">Country</ion-label>
+        <ion-select type="text" [(ngModel)]="country" (ionChange)="fillLocationDrpDown($event)" required>
+          <ion-option *ngFor="let p of countryDrpDownVals" value="{{p.id}}">{{p.title}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label color="custom">Location</ion-label>
+        <ion-select [(ngModel)]="location" (ionChange)="fillBuildingDrpDown($event)" required>
+          <ion-option *ngFor="let p of locationDrpDownVals" value="{{p.id}}">{{p.title}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label color="custom">Building</ion-label>
+        <ion-select [(ngModel)]="building" (ionChange)="fillFloorDrpDown($event)" required>
+          <ion-option *ngFor="let p of buildingDrpDownVals" value="{{p.id}}">{{p.title}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label color="custom">Floor</ion-label>
+        <ion-select [(ngModel)]="floor" required>
+          <ion-option *ngFor="let p of floorDrpDownVals" value="{{p.id}}">{{p.title}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-grid>
+      <ion-row>
+        <!-- <ion-col col-5></ion-col> -->
+        <ion-col col-12 class="save">
+            <ion-icon name="arrow-round-forward" (click)='save()'></ion-icon>
+        </ion-col>
+        <!-- <ion-col col-5></ion-col> -->
+      </ion-row>
+    </ion-grid>
+    
+    <!-- <button ion-button color="primary" myitem (click)='save()'>Submit</button> -->
+  </div>
+
+
+  <!--<div padding>
+    <ion-segment [(ngModel)]="region">
+      <ion-segment-button value="apj">
+        APJ
+      </ion-segment-button>
+      <ion-segment-button value="emea">
+        EMEA
+      </ion-segment-button>
+      <ion-segment-button value="la">
+      LATIN America
+        </ion-segment-button>
+        <ion-segment-button value="na">
+            NORTH America
+              </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="region">
+    <ion-list *ngSwitchCase="'apj'">
+      <ion-item>
+          <ion-label>Country</ion-label>
+          <ion-select [(ngModel)]="country">
+              <ion-option value="india">India</ion-option>
+              <ion-option value="china">Pakistan</ion-option>
+              <ion-option value="pakistan">China</ion-option>
+              <ion-option value="japan">Japan</ion-option>
+            </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label>Location</ion-label>
+          <ion-select [(ngModel)]="location">
+              <ion-option value="hyd">ITC- Hyderabad</ion-option>
+              <ion-option value="bang">Bangalore</ion-option>
+            </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label>Building</ion-label>
+          <ion-select [(ngModel)]="building">
+              <ion-option value="b1">Building 1</ion-option>
+              <ion-option value="b2">Building 2</ion-option>
+            </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label>Floor</ion-label>
+          <ion-select [(ngModel)]="floor">
+              <ion-option value="f1">Floor 1</ion-option>
+              <ion-option value="f2">Floor 2</ion-option>
+            </ion-select>
+      </ion-item>
+    </ion-list>
+  </div>
+ <button ion-button color="primary" myitem (click)='openFilters()'>Submit</button>-->
+</ion-content>

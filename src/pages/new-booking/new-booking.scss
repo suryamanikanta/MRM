@@ -1,0 +1,53 @@
+page-new-booking {
+  $toolbar-background: #20b426;
+  ::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  ion-textarea {
+    height: 40px;
+  }
+  .selected {
+    border: 1px solid #20b426;
+    border-radius: 20px;
+    background-color: #20b426;
+    color: #FFFFFF;
+  }
+  [align-items-center] {
+    text-align: center;
+  }
+  .datetime-md {
+    padding: 13px 8px 13px 10px;
+  }
+  .card-background-page {
+    ion-card {
+      position: relative;
+      text-align: center;
+    }
+    .card-title {
+      position: absolute;
+      top: 36%;
+      font-size: 2.0em;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+    }
+    .card-subtitle {
+      font-size: 1.0em;
+      position: absolute;
+      top: 52%;
+      width: 100%;
+      color: #fff;
+    }
+  }
+  .book {
+    border-radius: 50px !important;
+    height: 50px !important;
+  }
+  .field {
+    font-weight: bold;
+  }
+  .text-input-md {
+    margin: 13px 0px;
+  }
+}

@@ -1,0 +1,38 @@
+<!-- <div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img src="../assets/logo.svg">
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div> -->
+
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color="custom">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <!-- <ion-card class="profile">
+        <ion-list>
+          <ion-item>
+            <ion-label>Rajeev Deshpande</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>CA Technologies</ion-label>
+          </ion-item>
+        </ion-list>
+        <img src="../assets/imgs/profile.png" alt="profile">
+      </ion-card> -->
+      <button menuClose ion-item *ngFor="let p of pages" [class.activeHighlight] = "checkActive(p)" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

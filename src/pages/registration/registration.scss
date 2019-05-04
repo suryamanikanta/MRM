@@ -1,0 +1,22 @@
+page-registration {
+  ::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  .profile {
+    img {
+      width: 150px;
+    }
+  }
+  .save {
+    text-align: center;
+    color: #fe5121;
+  }
+  .textcenter {
+    text-align: center;
+    color: #fe5121;
+  }
+  .select-text {
+    color: #fe5121;
+  }
+}
